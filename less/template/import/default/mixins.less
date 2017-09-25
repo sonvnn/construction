@@ -1,0 +1,116 @@
+.for(@i, @n) {
+  .-each(@i)
+}
+
+.for(@n) when (isnumber(@n)) {
+  .for(1, @n)
+}
+
+.for(@i, @n) when not (@i = @n) {
+  .for((@i + (@n - @i) / abs(@n - @i)), @n);
+}
+
+// ............................................................
+// .for-each
+
+.for(@array) when (default()) {
+  .for-impl_(length(@array))
+}
+
+.for-impl_(@i) when (@i > 1) {
+  .for-impl_((@i - 1))
+}
+
+.for-impl_(@i) when (@i > 0) {
+  .-each(extract(@array, @i))
+}
+
+@array: 5 5px, 10 10px, 15 15px, 20 20px, 25 25px, 30 30px, 35 35px, 40 40px, 45 45px, 50 50px, 55 55px, 60 60px;
+
+.pl- {
+  .for(@array);
+  .-each(@value) {
+    @name: extract(@value, 1);
+    &@{name} {
+      //background-color: extract(@value);
+      padding-left: extract(@value, 2);
+    }
+  }
+}
+
+.pt- {
+  .for(@array);
+  .-each(@value) {
+    @name: extract(@value, 1);
+    &@{name} {
+      //background-color: extract(@value);
+      padding-top: extract(@value, 2);
+    }
+  }
+}
+
+.pr- {
+  .for(@array);
+  .-each(@value) {
+    @name: extract(@value, 1);
+    &@{name} {
+      //background-color: extract(@value);
+      padding-right: extract(@value, 2);
+    }
+  }
+}
+
+.pb- {
+  .for(@array);
+  .-each(@value) {
+    @name: extract(@value, 1);
+    &@{name} {
+      //background-color: extract(@value);
+      padding-bottom: extract(@value, 2);
+    }
+  }
+}
+
+.ml- {
+  .for(@array);
+  .-each(@value) {
+    @name: extract(@value, 1);
+    &@{name} {
+      //background-color: extract(@value);
+      margin-left: extract(@value, 2);
+    }
+  }
+}
+
+.mt- {
+  .for(@array);
+  .-each(@value) {
+    @name: extract(@value, 1);
+    &@{name} {
+      //background-color: extract(@value);
+      margin-top: extract(@value, 2);
+    }
+  }
+}
+
+.mr- {
+  .for(@array);
+  .-each(@value) {
+    @name: extract(@value, 1);
+    &@{name} {
+      //background-color: extract(@value);
+      margin-right: extract(@value, 2);
+    }
+  }
+}
+
+.mb- {
+  .for(@array);
+  .-each(@value) {
+    @name: extract(@value, 1);
+    &@{name} {
+      //background-color: extract(@value);
+      margin-bottom: extract(@value, 2);
+    }
+  }
+}
