@@ -64,14 +64,14 @@
 /* Typo */
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   color: #686868;
+  font-size: 15px;
 }
 p {
   color: #686868;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
-  font-size: 15px;
   line-height: 26px;
   margin-bottom: 28px;
 }
@@ -531,10 +531,12 @@ table.table-striped > tbody > tr:nth-of-type(odd) {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
-  border: 1px solid;
+  border: 1px solid #e9e9e9;
   font-size: 15px;
   line-height: 1.6em;
-  padding: 7px 35px;
+  background: #f8f6f1 none repeat scroll 0 0;
+  color: #686868;
+  padding: 7px 20px;
   font-weight: 400;
 }
 .btn.btn-lg {
@@ -714,11 +716,15 @@ table.table-striped > tbody > tr:nth-of-type(odd) {
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-size: 40px 40px;
 }
-/*List*/
 ul {
+  padding-left: 15px;
+}
+ul li {
+  margin: 5px 0;
+}
+ul.list-icon {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 ul.list-icon [class*="fa"] {
   position: absolute;
@@ -743,6 +749,18 @@ ul.list-icon li {
 .tz__block__info--flex .tz__block--right {
   text-align: right;
   width: 60%;
+}
+.nav-pills > li.active > a {
+  color: #ffb00d;
+  background: none;
+}
+.nav-pills > li.active > a:hover {
+  color: #ffb00d;
+  background: none;
+}
+.nav-pills > li.active > a:focus {
+  color: #ffb00d;
+  background: none;
 }
 /*Border*/
 .border-bottom-1 {
@@ -5543,6 +5561,10 @@ ul.list-icon li {
 #main-body .tz-module .nav li:first-child {
   margin-top: 0;
 }
+#main-body .tz-module .latestnews {
+  margin: 0;
+  padding: 0;
+}
 #main-body .tz-module .latestnews li {
   display: table;
 }
@@ -5571,6 +5593,22 @@ ul.list-icon li {
 }
 #main-body .tz-module #login-form .unstyled {
   margin-top: 20px;
+}
+#main-body .tz-module #login-form ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#main-body .tz-module #login-form .btn {
+  color: #fff;
+}
+#main-body .brochures p {
+  margin-bottom: 10px;
+}
+#main-body .brochures p a {
+  width: 100%;
+  text-align: left;
+  padding: 12px 20px;
 }
 /* Header -- Masstop */
 .tz__block__header--masstop .tz__block__header--masstop--left ul {
@@ -5972,8 +6010,8 @@ ul.list-icon li {
   margin: 0;
 }
 /* Blog Category */
-.blog > div {
-  margin-bottom: 40px;
+.blog .items-row .tz__blog__title h3 {
+  font-size: 22px;
 }
 .blog .category-desc img {
   float: left;
@@ -5982,7 +6020,11 @@ ul.list-icon li {
 .blog .tz__blog__media {
   margin-bottom: 40px;
 }
+.blog .tz__blog__media img {
+  width: 100%;
+}
 .blog .tz__blog__content {
+  margin-bottom: 40px;
   display: flex;
   align-items: flex-start;
 }
@@ -6014,7 +6056,18 @@ ul.list-icon li {
   padding: 7px 20px;
 }
 .blog .tz__blog__content--right .readmore a.btn:hover {
-  color: #ffb00d;
+  background: #ffb00d;
+  color: #fff;
+  border: 1px solid #ffb00d;
+}
+.blog .items-leading .tz__blog__title h3 {
+  font-size: 30px;
+}
+.blog .items-row .tz__blog__title h3 {
+  font-size: 22px;
+}
+.blog .items-row .tz__blog__media {
+  margin-bottom: 25px;
 }
 .blog .tz__blog__published {
   background: #ffb00d;
@@ -6047,6 +6100,24 @@ ul.list-icon li {
 }
 .blog .tz__blog__hits [class*="fa"] {
   color: #ffb00d;
+}
+.service .tz__blog__content .tz__blog__title h3:after {
+  background: rgba(0, 0, 0, 0.1) none repeat scroll 0 0;
+  content: "";
+  display: block;
+  height: 1px;
+  margin-top: 15px;
+  width: 50px;
+  margin-bottom: 35px;
+}
+.service .tz__blog__content .page-header h2:after {
+  background: rgba(0, 0, 0, 0.1) none repeat scroll 0 0;
+  content: "";
+  display: block;
+  height: 1px;
+  margin-top: 15px;
+  width: 50px;
+  margin-bottom: 20px;
 }
 /* Article */
 .item-page > div {
@@ -6094,7 +6165,7 @@ ul.list-icon li {
   margin-bottom: 20px;
   display: inline-block;
 }
-.item-page .tz__blog__content--right .readmore .btn {
+.item-page .tz__blog__content--right .readmore a.btn {
   background: #f8f6f1;
   color: #686868;
   padding: 7px 20px;
@@ -6130,5 +6201,106 @@ ul.list-icon li {
 }
 .item-page .tz__blog__hits [class*="fa"] {
   color: #ffb00d;
+}
+#tpPortfolio {
+  margin: -10px;
+}
+#tpPortfolio .tpFilter {
+  margin-bottom: 25px;
+}
+#tpPortfolio #portfolio .tpCategories {
+  font-style: italic;
+  font-weight: 300;
+  color: #f8f6f1;
+}
+#tpPortfolio #portfolio .tpCategories a {
+  font-style: italic;
+}
+#tpPortfolio #tz_append {
+  padding: 10px;
+}
+#tpPortfolio #tz_append a {
+  color: #222;
+  border-radius: 5px;
+}
+#tpPortfolio #tz_append a:hover {
+  background: #ffb00d;
+  border: 1px solid #ffb00d;
+  color: #fff;
+}
+.tpItemPage .tp-item-tools .btn {
+  color: #222;
+  padding: 7px 10px;
+}
+.tpItemPage .tpArticleMedia {
+  margin-bottom: 40px;
+}
+.tpItemPage .headExtra {
+  color: #292524;
+  font-family: "Poppins", sans-serif;
+}
+.tpItemPage .tpArticleExtraField ul {
+  padding: 0;
+}
+.tpItemPage .tpArticleExtraField li.tp_extrafield-item {
+  padding: 3px 0 !important;
+}
+.tpItemPage .tpArticleExtraField .tp_extrafield-label {
+  margin-right: 10px;
+}
+.tpItemPage .tpArticleExtraField .tp_extrafield-label:after {
+  content: ":";
+}
+.tpItemPage .tpArticleExtraField .tp_extrafield-value {
+  font-weight: 300;
+}
+.tpItemPage .tpSocialShare a {
+  padding: 12px;
+  height: 40px;
+  width: 40px;
+}
+.tpItemPage .tpHead .tpMeta {
+  font-weight: 300;
+  font-style: italic;
+}
+.tpItemPage .tpHead .tpTitle {
+  font-size: 27px;
+}
+.tpItemPage .tpArticleAuthor .AuthorAvatar {
+  padding-right: 0;
+}
+.tzService .TzInner {
+  margin-bottom: 40px;
+}
+.tzService .TzInner .TzArticleMedia {
+  margin-bottom: 25px !important;
+}
+.tzService .TzInner .TzPortfolioTitle {
+  font-family: "Poppins", sans-serif;
+}
+.tzService .TzInner .TzPortfolioTitle a {
+  color: #292524;
+  text-decoration: none;
+}
+.tzService .TzInner .TzPortfolioDescription a.TzPortfolioReadmore {
+  background: #f8f6f1 none repeat scroll 0 0 !important;
+  border-radius: 0 ;
+  padding: 7px 20px;
+  color: #686868 !important;
+  text-transform: uppercase;
+}
+.tzService .TzInner .TzPortfolioDescription a.TzPortfolioReadmore:hover {
+  background: #ffb00d none repeat scroll 0 0 !important;
+  color: #fff !important;
+  border: 1px solid #ffb00d !important;
+}
+@media (max-width: 767px) {
+  .tpItemPage .col-xs-12 {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .tpItemPage .col-xs-12:last-child {
+    margin-bottom: 0;
+  }
 }
 /*# sourceMappingURL=template.css.map */

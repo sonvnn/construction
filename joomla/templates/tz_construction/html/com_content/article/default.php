@@ -23,7 +23,7 @@ $info = $params->get('info_block_position', 0);
 $assocParam = (JLanguageAssociations::isEnabled() && $params->get('show_associations'));
 JHtml::_('behavior.caption');
 ?>
-<div class="item-page<?php echo $this->pageclass_sfx; ?>" itemscope itemtype="https://schema.org/Article">
+<div class="item-page<?php echo ' '.$this->pageclass_sfx; ?>" itemscope itemtype="https://schema.org/Article">
     <meta itemprop="inLanguage"
           content="<?php echo ($this->item->language === '*') ? JFactory::getConfig()->get('language') : $this->item->language; ?>"/>
     <?php if ($this->params->get('show_page_heading')) : ?>
@@ -48,9 +48,11 @@ JHtml::_('behavior.caption');
     <?php endif; ?>
     <?php echo JLayoutHelper::render('joomla.content.full_image', $this->item); ?>
     <div class="tz__blog__content">
+        <?php if ($params->get('show_publish_date') || $params->get('show_hits')) : ?>
         <div class="tz__blog__content--left">
             <?php echo JLayoutHelper::render('joomla.content.info_block_left', array('item' => $this->item, 'params' => $params)); ?>
         </div>
+        <?php endif; ?>
         <div class="tz__blog__content--right">
             <?php if ($params->get('show_title') || $params->get('show_author')) : ?>
                 <div class="page-header">

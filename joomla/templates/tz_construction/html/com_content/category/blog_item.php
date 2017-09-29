@@ -27,15 +27,17 @@ $assocParam = (JLanguageAssociations::isEnabled() && $params->get('show_associat
         <?php echo JLayoutHelper::render('joomla.content.intro_image', $this->item); ?>
     </div>
     <div class="tz__blog__content">
-        <div class="tz__blog__content--left">
-            <?php echo JLayoutHelper::render('joomla.content.info_block_left', array('item' => $this->item, 'params' => $params)); ?>
-        </div>
-        <div class="tz__blog__content--right">
-            <?php echo JLayoutHelper::render('joomla.content.blog_style_default_item_title', $this->item); ?>
+        <?php if ($params->get('show_publish_date') || $params->get('show_hits')) : ?>
+            <div class="tz__blog__content--left">
+                <?php echo JLayoutHelper::render('joomla.content.info_block_left', array('item' => $this->item, 'params' => $params)); ?>
+            </div>
+        <?php endif; ?>
 
+        <div class="tz__blog__content--right">
             <?php if ($canEdit || $params->get('show_print_icon') || $params->get('show_email_icon')) : ?>
                 <?php echo JLayoutHelper::render('joomla.content.icons', array('params' => $params, 'item' => $this->item, 'print' => false)); ?>
             <?php endif; ?>
+            <?php echo JLayoutHelper::render('joomla.content.blog_style_default_item_title', $this->item); ?>
 
             <?php // Todo Not that elegant would be nice to group the params ?>
             <?php $useDefList = ($params->get('show_modify_date') || $params->get('show_publish_date') || $params->get('show_create_date')

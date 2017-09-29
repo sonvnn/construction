@@ -487,8 +487,12 @@
 
 /* Blog Category */
 .blog {
-  >div {
-    margin-bottom: 40px;
+  .items-row {
+    .tz__blog__title {
+      h3 {
+        font-size: 22px;
+      }
+    }
   }
   .category-desc {
     img {
@@ -498,8 +502,12 @@
   }
   .tz__blog__media {
     margin-bottom: 40px;
+    img {
+      width: 100%;
+    }
   }
   .tz__blog__content {
+    margin-bottom: 40px;
     display: flex;
     align-items: flex-start;
     .icons {
@@ -531,10 +539,29 @@
           color: @mainTextColor;
           padding: 7px 20px;
           &:hover {
-            color: @mainColor;
+            background: @mainColor;
+            color: #fff;
+            border: 1px solid #ffb00d;
           }
         }
       }
+    }
+  }
+  .items-leading {
+    .tz__blog__title {
+      h3 {
+        font-size: 30px;
+      }
+    }
+  }
+  .items-row {
+    .tz__blog__title {
+      h3 {
+        font-size: 22px;
+      }
+    }
+    .tz__blog__media {
+      margin-bottom: 25px;
     }
   }
   .tz__blog {
@@ -568,6 +595,32 @@
       color: #a3a3a3;
       [class*="fa"] {
         color: @mainColor;
+      }
+    }
+  }
+}
+.service {
+  .tz__blog__content {
+    .tz__blog__title {
+      h3:after {
+        background: rgba(0, 0, 0, 0.1) none repeat scroll 0 0;
+        content: "";
+        display: block;
+        height: 1px;
+        margin-top: 15px;
+        width: 50px;
+        margin-bottom: 35px;
+      }
+    }
+    .page-header {
+      h2:after {
+        background: rgba(0, 0, 0, 0.1) none repeat scroll 0 0;
+        content: "";
+        display: block;
+        height: 1px;
+        margin-top: 15px;
+        width: 50px;
+        margin-bottom: 20px;
       }
     }
   }
@@ -623,7 +676,7 @@
         display: inline-block;
       }
       .readmore {
-        .btn {
+        a.btn {
           background: @background-btn;
           color: @mainTextColor;
           padding: 7px 20px;
@@ -662,6 +715,130 @@
       color: #a3a3a3;
       [class*="fa"] {
         color: @mainColor;
+      }
+    }
+  }
+}
+#tpPortfolio {
+  margin: -10px;
+  .tpFilter {
+    margin-bottom: 25px;
+  }
+  #portfolio {
+    .tpCategories{
+      font-style: italic;
+      font-weight: 300;
+      color: #f8f6f1;
+      a {
+        font-style: italic;
+      }
+    }
+  }
+  #tz_append {
+    padding: 10px;
+    a {
+      color: #222;
+      border-radius: 5px;
+      &:hover {
+        background: #ffb00d;
+        border: 1px solid #ffb00d;
+        color: #fff;
+      }
+    }
+  }
+}
+.tpItemPage {
+  .tp-item-tools {
+    .btn {
+      color: #222;
+      padding: 7px 10px;
+    }
+  }
+  .tpArticleMedia {
+    margin-bottom: 40px;
+  }
+  .headExtra {
+    color: #292524;
+    font-family: "Poppins",sans-serif;
+  }
+  .tpArticleExtraField {
+    ul {
+      padding: 0;
+    }
+    li.tp_extrafield-item {
+      padding: 3px 0 !important;
+    }
+    .tp_extrafield-label {
+      margin-right: 10px;
+      &:after {
+        content: ":";
+      }
+    }
+    .tp_extrafield-value {
+      font-weight: 300;
+    }
+  }
+  .tpSocialShare {
+    a {
+      padding: 12px;
+      height: 40px;
+      width: 40px;
+    }
+  }
+  .tpHead {
+    .tpMeta {
+      font-weight: 300;
+      font-style: italic;
+    }
+    .tpTitle {
+      font-size: 27px;
+    }
+  }
+  .tpArticleAuthor {
+    .AuthorAvatar {
+      padding-right: 0;
+    }
+  }
+}
+
+.tzService {
+  .TzInner {
+    margin-bottom: 40px;
+    .TzArticleMedia {
+      margin-bottom: 25px !important;
+    }
+    .TzPortfolioTitle {
+      font-family: "Poppins", sans-serif;
+      a {
+        color: #292524;
+        text-decoration: none;
+      }
+    }
+    .TzPortfolioDescription {
+      a.TzPortfolioReadmore {
+        background: #f8f6f1 none repeat scroll 0 0 !important;
+        border-radius: 0 ;
+        padding: 7px 20px;
+        color: #686868 !important;
+        text-transform: uppercase;
+        &:hover {
+          background: #ffb00d none repeat scroll 0 0 !important;
+          color: #fff !important;
+          border: 1px solid #ffb00d !important;
+        }
+      }
+    }
+  }
+
+}
+
+@media (max-width: @screen-xs-max) {
+  .tpItemPage {
+    .col-xs-12 {
+      width: 100%;
+      margin-bottom: 30px;
+      &:last-child {
+        margin-bottom: 0;
       }
     }
   }
